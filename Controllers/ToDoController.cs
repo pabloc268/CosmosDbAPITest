@@ -1,7 +1,5 @@
 ﻿using System;
 using CosmosAPI.Models;
-
-//Add These
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Documents;
@@ -13,20 +11,20 @@ namespace CosmosAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ItemController:ControllerBase
+    public class ToDoController:ControllerBase
     {
         private readonly IDocumentClient _documentClient;
         readonly String databaseId;
         readonly String collectionId;
         public IConfiguration Configuration { get; }
 
-        public ItemController(IDocumentClient documentClient, IConfiguration configuration)
+        public ToDoController(IDocumentClient documentClient, IConfiguration configuration)
         {
             _documentClient = documentClient;
             Configuration = configuration;
 
             databaseId = Configuration["DatabaseId"];
-            collectionId = "Items"; 
+            collectionId = "ToDo";
 
             BuildCollection().Wait();
         }
@@ -39,28 +37,21 @@ namespace CosmosAPI.Controllers
         }
 
         [HttpGet]
-        public IQueryable<Item> Get()
+        public IQueryable<ToDo> Get()
         {
-            return _documentClient.CreateDocumentQuery<Item>(UriFactory.CreateDocumentCollectionUri(databaseId, collectionId),
+            return _documentClient.CreateDocumentQuery<ToDo>(UriFactory.CreateDocumentCollectionUri(databaseId, collectionId),
                 new FeedOptions { MaxItemCount = 20 });
         }
 
-        [HttpGet("{id}")]
-        public IQueryable<Item> Get(string id)
-        {
-            return _documentClient.CreateDocumentQuery<Item>(UriFactory.CreateDocumentCollectionUri(databaseId, collectionId),
-                new FeedOptions { MaxItemCount = 1 }).Where((i) => i.Id == id);
-        }
-
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Item item) 
+        public async Task<IActionResult> Post([FromBody] ToDo item) 
         {
             var response = await _documentClient.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(databaseId, collectionId),item);
             return Ok();
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(string id, [FromBody] Item item) 
+        public async Task<IActionResult> Put(string id, [FromBody] ToDo item)
         {
             await _documentClient.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(databaseId, collectionId, id),
                 item);

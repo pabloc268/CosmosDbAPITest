@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/andrewjulow/Projects/CosmosAPI/CosmosAPI/CosmosAPI.csproj": {}
+    "C:\\Users\\Pablo\\Desktop\\CosmosDb\\API\\cosmosdbrestapi\\CosmosAPI.csproj": {}
   },
   "projects": {
-    "/Users/andrewjulow/Projects/CosmosAPI/CosmosAPI/CosmosAPI.csproj": {
+    "C:\\Users\\Pablo\\Desktop\\CosmosDb\\API\\cosmosdbrestapi\\CosmosAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andrewjulow/Projects/CosmosAPI/CosmosAPI/CosmosAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\CosmosDb\\API\\cosmosdbrestapi\\CosmosAPI.csproj",
         "projectName": "CosmosAPI",
-        "projectPath": "/Users/andrewjulow/Projects/CosmosAPI/CosmosAPI/CosmosAPI.csproj",
-        "packagesPath": "/Users/andrewjulow/.nuget/packages/",
-        "outputPath": "/Users/andrewjulow/Projects/CosmosAPI/CosmosAPI/obj/",
+        "projectPath": "C:\\Users\\Pablo\\Desktop\\CosmosDb\\API\\cosmosdbrestapi\\CosmosAPI.csproj",
+        "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Pablo\\Desktop\\CosmosDb\\API\\cosmosdbrestapi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/andrewjulow/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {}
           }
         },
@@ -38,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "Microsoft.Azure.DocumentDB.Core": {
               "target": "Package",
@@ -58,6 +59,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.0.3, 3.0.3]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -66,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
